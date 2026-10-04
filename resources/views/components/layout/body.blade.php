@@ -1,0 +1,3 @@
+<body class="font-body bg-neutral-900 text-white">
+    {{ $slot }}
+</body>
