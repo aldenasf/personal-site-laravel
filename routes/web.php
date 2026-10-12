@@ -11,5 +11,9 @@ Route::get('/about', function () {
 });
 
 Route::get('/projects', function () {
-    return view('projects');
+    return view('projects.index');
+});
+
+Route::get('/projects/{id}', function ($id) {
+    return view('projects.post', ['id' => $id]);
 });
