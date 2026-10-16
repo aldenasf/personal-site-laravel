@@ -17,11 +17,16 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
+        $createdAt = fake()->dateTimeBetween('-1 year', 'now');
+        $updatedAt = fake()->boolean(30) ? fake()->dateTimeBetween($createdAt, 'now') : $createdAt;
+
         return [
             'title' => fake()->text(64),
             'description' => fake()->text(255),
             'content' => fake()->realText(2048),
-            'pinned' => false
+            'pinned' => false,
+            'created_at' => $createdAt,
+            'updated_at' => $updatedAt,
         ];
     }
 }
