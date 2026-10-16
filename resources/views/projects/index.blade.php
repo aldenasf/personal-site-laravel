@@ -1,245 +1,59 @@
-
-
-<x-blog-layout
-    title="test"
-    description="Non amet nisi nostrud exercitation mollit consectetur consectetur dolor enim cupidatat eiusmod consequat laboris."
-    imageURL="https://aldenasf.vercel.app/_astro/cover.DkIKzUZF_Z7myGT.webp"
-    :date="\Illuminate\Support\Carbon::now()"
-    :updated="\Illuminate\Support\Carbon::now()"
-    :pinned="false"
->
-<x-markdown>
-
-
-Here is a sample of some basic Markdown syntax that can be used when writing
-Markdown content in Astro.
-
-## Headings
-
-The following HTML `<h1>`—`<h6>` elements represent six levels of section
-headings. `<h1>` is the highest section level while `<h6>` is the lowest.
-
-# H1
-
-## H2
-
-### H3
-
-#### H4
-
-##### H5
-
-###### H6
-
-## Paragraph
-
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum,
-voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma
-dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as
-cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin
-porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur?
-Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit
-ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda
-veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore
-eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata
-tiustia prat.
-
-Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne
-sapicia is sinveli squiatum, core et que aut hariosam ex eat.
-
-## Images
-
-### Syntax
-
-```markdown
-![Alt text](./full/or/relative/path/of/image)
-```
-
-### Output
-
-![blog placeholder](../../../../public/blog-placeholder-about.jpg)
-
-## Blockquotes
-
-The blockquote element represents content that is quoted from another source,
-optionally with a citation which must be within a `footer` or `cite` element,
-and optionally with in-line changes such as annotations and abbreviations.
-
-### Blockquote without attribution
-
-#### Syntax
-
-```markdown
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.
-> **Note** that you can use _Markdown syntax_ within a blockquote.
-```
-
-#### Output
-
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.
-> **Note** that you can use _Markdown syntax_ within a blockquote.
-
-### Blockquote with attribution
-
-#### Syntax
-
-```markdown
-> Don't communicate by sharing memory, share memory by communicating.<br> —
-> <cite>Rob Pike[^1]</cite>
-```
-
-#### Output
-
-> Don't communicate by sharing memory, share memory by communicating.<br> —
-> <cite>Rob Pike[^1]</cite>
-
-[^1]:
-    The above quote is excerpted from Rob Pike's
-    [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest,
-    November 18, 2015.
-
-## Tables
-
-### Syntax
-
-```markdown
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
-```
-
-### Output
-
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
-
-## Code Blocks
-
-### Syntax
-
-we can use 3 backticks ``` in new line and write snippet and close with 3
-backticks on new line and to highlight language specific syntax, write one word
-of language name after first 3 backticks, for eg. html, javascript, css,
-markdown, typescript, txt, bash
-
-````markdown
-```html
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>Example HTML5 Document</title>
-    </head>
-    <body>
-        <p>Test</p>
-    </body>
-</html>
-```
-````
-
-### Output
-
-```html
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>Example HTML5 Document</title>
-    </head>
-    <body>
-        <p>Test</p>
-    </body>
-</html>
-```
-
-## List Types
-
-### Ordered List
-
-#### Syntax
-
-```markdown
-1. First item
-2. Second item
-3. Third item
-```
-
-#### Output
-
-1. First item
-2. Second item
-3. Third item
-
-### Unordered List
-
-#### Syntax
-
-```markdown
-- List item
-- Another item
-- And another item
-```
-
-#### Output
-
-- List item
-- Another item
-- And another item
-
-### Nested list
-
-#### Syntax
-
-```markdown
-- Fruit
-    - Apple
-    - Orange
-    - Banana
-- Dairy
-    - Milk
-    - Cheese
-```
-
-#### Output
-
-- Fruit
-    - Apple
-    - Orange
-    - Banana
-- Dairy
-    - Milk
-    - Cheese
-
-## Other Elements — abbr, sub, sup, kbd, mark
-
-### Syntax
-
-```markdown
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and
-other small creatures.
-```
-
-### Output
-
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and
-other small creatures.
-
-</x-markdown>
-</x-blog-layout>
+@php
+    /** @var \App\Models\Post|null $highlightedPost */
+    /** @var \Illuminate\Database\Eloquent\Collection<int, \App\Models\Post> $posts */
+@endphp
+
+<x-layout page="projects" title="Projects">
+    <div class="flex items-center justify-center">
+        <div class="flex max-w-4xl flex-col items-center justify-center px-4 py-2 lg:py-8">
+            <div id="pinned-post" class="flex flex-col">
+                <div class="mb-4 flex justify-center">
+                    <h1 class="text-xl font-semibold lg:text-3xl">
+                        {{-- { ? "Pinned Post" : "Latest Post"} --}}
+                        @if ($pinnedPost !== null)
+                            Pinned Post
+                        @else
+                            Latest Post
+                        @endif
+                    </h1>
+                </div>
+                <div class="flex">
+                    {{-- {
+                        highlightedPost ? (
+                            <BlogCard highlighted pinned={pinnedPostExists} {...getCardProps(highlightedPost)} />
+                        ) : null
+                    } --}}
+                     @if ($highlightedPost !== null)
+                        <x-post-card
+                            :title="$highlightedPost->title"
+                            :description="$highlightedPost->description"
+                            :date="$highlightedPost->created_at"
+                            :updated="$highlightedPost->updated_at"
+                            :image="asset($highlightedPost->image)"
+                            :highlighted="true"
+                            :pinned="$highlightedPost->pinned"
+                            href="#"
+                        />
+                     @endif
+                </div>
+            </div>
+            <div id="posts" class="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
+                @foreach ($posts as $post)
+
+                        <x-post-card
+                            :title="$post->title"
+                            :description="$post->description"
+                            :date="$post->created_at"
+                            :updated="$post->updated_at"
+                            :image="asset($post->image)"
+                            :highlighted="true"
+                            :pinned="$post->pinned"
+                            href="#"
+                        />
+                @endforeach
+                {{-- {posts.map((post) => <BlogCard {...getCardProps(post)} />)} --}}
+                {{-- {{ $posts }} --}}
+            </div>
+        </div>
+    </div>
+</x-layout>
