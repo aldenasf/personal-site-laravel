@@ -17,6 +17,7 @@ return new class extends Migration {
             $table->string('description');
             $table->text('content');
             $table->boolean('pinned');
+            $table->string('image')->nullable();
         });
     }
 

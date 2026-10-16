@@ -27,6 +27,7 @@ class PostFactory extends Factory
             'pinned' => false,
             'created_at' => $createdAt,
             'updated_at' => $updatedAt,
+            'image' => 'post-placeholder.jpg'
         ];
     }
 }
