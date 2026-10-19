@@ -30,4 +30,13 @@ class PostController extends Controller
             'highlightedPost' => $highlightedPost
         ]);
     }
+
+    public function show($id) 
+    {
+        $post = Post::findOrFail($id);
+
+        return view('projects.show', [
+            'post' => $post 
+        ]);
+    }
 }

@@ -13,6 +13,6 @@ Route::get('/about', function () {
 
 Route::get('/projects', [PostController::class, 'index']);
 
-Route::get('/projects/{id}', function ($id) {
-    return view('projects.post', ['id' => $id]);
-});
+Route::get('/projects/{id}', [PostController::class, 'show'])
+->whereNumber('id')
+->name("projects.shows");
