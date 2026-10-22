@@ -9,7 +9,7 @@ This specification outlines the technical architecture, data structures, feature
 ### 1.1 For Humans (Developers & Maintainers)
 - **Primary Goal:** Replicate the exact design, UX, responsive layouts, color themes, and markdown rendering of the original Astro portfolio (`aldenasf.vercel.app`), while upgrading static content collections into a **database-driven Laravel application with a complete CRUD management system**.
 - **Admin Experience:** Eliminate manual `.md`/`.mdx` file authoring and git commits for new projects. Provide an authenticated dashboard to write, edit, pin, hide, publish, and delete posts with image upload support and markdown rendering.
-- **Frontend Fidelity:** Preserve dark theme styling, Tailwind CSS utility classes, custom cards (BlogCard, ProjectCard, SkillCard, SocialCard), and typography.
+- **Frontend Fidelity:** Preserve dark theme styling, Tailwind CSS utility classes, custom cards (PostCard, ProjectCard, SkillCard, SocialCard), and typography.
 
 ### 1.2 For AI Agents (Architectural Constraints & Guidelines)
 - **Framework:** Laravel 13 on PHP 8.3 (`declare(strict_types=1);`, explicit return types, constructor promotion).
@@ -27,7 +27,7 @@ This specification outlines the technical architecture, data structures, feature
 | **Routing** | File-based routing (`pages/index.astro`, `pages/projects/[...slug].astro`, `pages/about.md`) | Explicit routes in `routes/web.php` with Route Model Binding |
 | **Content Source** | Static Markdown/MDX (`src/content/posts/**/*.{md,mdx}`) | Eloquent ORM (`Post` model) backed by database table |
 | **Post Management** | Git commits of local markdown files | Authenticated Admin CRUD (Resource Controller, Form Requests, Blade Views) |
-| **Rendering** | Astro Components (`.astro`) | Blade Components (`<x-layout>`, `<x-blog-card>`, `<x-post-card>`, etc.) |
+| **Rendering** | Astro Components (`.astro`) | Blade Components (`<x-layout>`, `<x-post-card>`, `<x-post-layout>`, etc.) |
 | **Styling** | Tailwind CSS + `colors.json` | Tailwind CSS v4 (`resources/css/app.css` + `resources/json/colors.json`) |
 | **Markdown / Code** | Shiki + rehype plugins in Astro pipeline | `spatie/laravel-markdown` + `shiki` |
 
@@ -149,7 +149,7 @@ Protected under authentication middleware (`auth`):
 ### Phase 2: Public Interface Parity
 - Implement `PostController::show(Post $post)` to render dynamic markdown via `projects.post`.
 - Update `resources/views/about.blade.php` to match `src/pages/about.md`.
-- Match Blade components (`<x-blog-card>`, `<x-project-card>`, `<x-skill-card>`) exactly to Astro's HTML and Tailwind classes.
+- Match Blade components (`<x-post-card>`, `<x-project-card>`, `<x-skill-card>`) exactly to Astro's HTML and Tailwind classes.
 
 ### Phase 3: Admin Auth & CRUD Modules
 - Configure authentication for admin access.
