@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    // route: /posts/
     public function index()
     {
         $pinnedPost = Post::where('pinned', true)->first();
@@ -22,21 +20,21 @@ class PostController extends Controller
             return $query->where('id', '!=', $highlightedPost->id);
         })
             ->orderBy('updated_at', 'desc')
-            ->get();
+            ->paginate(20);
 
         return view('projects.index', [
             'posts' => $posts,
             'pinnedPost' => $pinnedPost,
-            'highlightedPost' => $highlightedPost
+            'highlightedPost' => $highlightedPost,
         ]);
     }
 
-    public function show($id) 
+    public function show($id)
     {
         $post = Post::findOrFail($id);
 
         return view('projects.show', [
-            'post' => $post 
+            'post' => $post,
         ]);
     }
 }

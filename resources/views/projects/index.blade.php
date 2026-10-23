@@ -20,7 +20,7 @@
                 <div class="flex">
                     {{-- {
                     highlightedPost ? (
-                    <BlogCard highlighted pinned={pinnedPostExists} {...getCardProps(highlightedPost)} />
+                    <PostCard highlighted pinned={pinnedPostExists} {...getCardProps(highlightedPost)} />
                     ) : null
                     } --}}
                     @if ($highlightedPost !== null)
@@ -39,8 +39,11 @@
                         :pinned="$post->pinned" :href="route('projects.shows', $post)" />
                 @endforeach
                 {{-- {posts.map((post) =>
-                <BlogCard {...getCardProps(post)} />)} --}}
+                <PostCard {...getCardProps(post)} />)} --}}
                 {{-- {{ $posts }} --}}
+            </div>
+            <div class="flex mt-4">
+                {{ $posts->links() }}
             </div>
         </div>
     </div>
