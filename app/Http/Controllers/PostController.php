@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
@@ -36,5 +38,23 @@ class PostController extends Controller
         return view('projects.show', [
             'post' => $post,
         ]);
+    }
+
+    public function store(Request $request): JsonResponse
+    {
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+            'content' => 'required|string',
+            'image' => 'required|string|max:255',
+            'pinned' => 'required|boolean',
+        ]);
+
+        $post = Post::create($validated);
+
+        return response()->json([
+            'message' => 'Post created successfully',
+            'data' => $post,
+        ], 201);
     }
 }
