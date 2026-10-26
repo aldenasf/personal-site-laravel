@@ -40,21 +40,40 @@ class PostController extends Controller
         ]);
     }
 
+    public function create()
+    {
+        return view('projects.create');
+    }
+
     public function store(Request $request): JsonResponse
     {
+        $request->merge([
+            'pinned' => $request->boolean('pinned'),
+        ]);
+
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'content' => 'required|string',
             'image' => 'required|string|max:255',
-            'pinned' => 'required|boolean',
+            'pinned' => 'boolean',
         ]);
 
         $post = Post::create($validated);
 
-        return response()->json([
+        // $response = $request->wantsJson() ? response()->json([
+        //     'message' => 'Post created successfully',
+        //     'data' => $post,
+        // ], 201) : redirect()->route('projects.shows', [
+        //                 'id' => $post
+        //             ]);
+
+
+        $response = response()->json([
             'message' => 'Post created successfully',
             'data' => $post,
         ], 201);
+
+        return $response;
     }
 }

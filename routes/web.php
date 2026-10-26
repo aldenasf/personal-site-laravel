@@ -12,7 +12,8 @@ Route::get('/about', function () {
 });
 
 Route::get('/projects', [PostController::class, 'index']);
-
+Route::get('/projects/create', [PostController::class, 'create'])
+    ->name('projects.create');
 Route::get('/projects/{id}', [PostController::class, 'show'])
-->whereNumber('id')
-->name("projects.shows");
+    ->whereNumber('id')
+    ->name('projects.shows');
