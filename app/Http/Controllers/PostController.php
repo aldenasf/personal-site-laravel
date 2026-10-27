@@ -68,11 +68,32 @@ class PostController extends Controller
         //                 'id' => $post
         //             ]);
 
-
         $response = response()->json([
             'message' => 'Post created successfully',
             'data' => $post,
         ], 201);
+
+        return $response;
+    }
+
+    public function delete(Request $request): JsonResponse
+    {
+        $validated = $request->validate([
+            'id' => 'required',
+        ]);
+
+        $post = Post::destroy($validated);
+
+        if ($post) {
+            $response = response()->json([
+                'message' => 'Post deleted successfully.',
+                'data' => $post,
+            ]);
+        } else {
+            $response = response()->json([
+                'message' => 'Post not found.',
+            ]);
+        }
 
         return $response;
     }
