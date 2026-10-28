@@ -10,3 +10,4 @@ Route::get('/user', function (Request $request) {
 
 Route::post('/projects', [PostController::class, 'store'])->name('projects.store');
 Route::delete('/projects', [PostController::class, 'delete'])->name('projects.delete');
+Route::patch('/projects', [PostController::class, 'update'])->name('projects.update');

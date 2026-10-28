@@ -97,4 +97,27 @@ class PostController extends Controller
 
         return $response;
     }
+
+    public function update(Request $request)
+    {
+        $validated = $request->validate([
+            'id' => 'required|integer|exists:posts,id',
+            'title' => 'sometimes|string|max:255',
+            'description' => 'sometimes|string|max:255',
+            'content' => 'sometimes|string',
+            'image' => 'sometimes|string|max:255',
+            'pinned' => 'sometimes|boolean',
+        ]);
+
+        $post = Post::findOrFail($validated['id']);
+
+        $post->update($validated);
+
+        $response = response()->json([
+            'message' => 'Post updated successfully.',
+            'data' => $post,
+        ]);
+
+        return $response;
+    }
 }
