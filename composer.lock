@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5001759188865e150e948f0a25f8145f",
+    "content-hash": "bf8e0830fcc084e2df4ae70e1e907742",
     "packages": [
         {
             "name": "blade-ui-kit/blade-icons",
@@ -220,6 +220,77 @@
                 }
             ],
             "time": "2026-09-06T14:11:38+00:00"
+        },
+        {
+            "name": "codeat3/blade-phosphor-icons",
+            "version": "2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codeat3/blade-phosphor-icons.git",
+                "reference": "39a40c44908729d20f03f9903f4abcc165b1b02b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codeat3/blade-phosphor-icons/zipball/39a40c44908729d20f03f9903f4abcc165b1b02b",
+                "reference": "39a40c44908729d20f03f9903f4abcc165b1b02b",
+                "shasum": ""
+            },
+            "require": {
+                "blade-ui-kit/blade-icons": "^1.1",
+                "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0|^13.0",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "codeat3/blade-icon-generation-helpers": "^0.12",
+                "codeat3/phpcs-styles": "^1.0",
+                "orchestra/testbench": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0",
+                "phpunit/phpunit": "^9.0|^10.5|^11.0|^12.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Codeat3\\BladePhosphorIcons\\BladePhosphorIconsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Codeat3\\BladePhosphorIcons\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Swapnil Sarwe",
+                    "homepage": "https://swapnilsarwe.com"
+                },
+                {
+                    "name": "Dries Vints",
+                    "homepage": "https://driesvints.com"
+                }
+            ],
+            "description": "A package to easily make use of \"Phosphor Icons\" in your Laravel Blade views.",
+            "homepage": "https://github.com/codeat3/blade-phosphor-icons",
+            "keywords": [
+                "blade",
+                "laravel",
+                "phosphor-icons"
+            ],
+            "support": {
+                "issues": "https://github.com/codeat3/blade-phosphor-icons/issues",
+                "source": "https://github.com/codeat3/blade-phosphor-icons/tree/2.4.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/swapnilsarwe",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-03-21T13:21:02+00:00"
         },
         {
             "name": "codeat3/blade-simple-icons",
@@ -2328,6 +2399,84 @@
                 }
             ],
             "time": "2026-09-28T18:12:51+00:00"
+        },
+        {
+            "name": "mckenziearts/livewire-markdown-editor",
+            "version": "v1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mckenziearts/livewire-markdown-editor.git",
+                "reference": "1e60eaa5781e89704e112425f832774be85cd71f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mckenziearts/livewire-markdown-editor/zipball/1e60eaa5781e89704e112425f832774be85cd71f",
+                "reference": "1e60eaa5781e89704e112425f832774be85cd71f",
+                "shasum": ""
+            },
+            "require": {
+                "codeat3/blade-phosphor-icons": "^2.4",
+                "illuminate/contracts": "^11.0|^12.0|^13.0",
+                "illuminate/support": "^11.0|^12.0|^13.0",
+                "league/commonmark": "^2.0",
+                "livewire/livewire": "^3.6|^4.0",
+                "php": "^8.3",
+                "spatie/commonmark-shiki-highlighter": "^2.5"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.25.0",
+                "mockery/mockery": "^1.6",
+                "orchestra/testbench": "^10.6.0|^11.0",
+                "pestphp/pest": "^4.0",
+                "pestphp/pest-plugin-type-coverage": "^4.0",
+                "phpstan/phpstan": "^2.1.27",
+                "rector/rector": "^2.1.7"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Mckenziearts\\LivewireMarkdownEditor\\LivewireMarkdownEditorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mckenziearts\\LivewireMarkdownEditor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arthur Monney",
+                    "email": "monneylobe@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "GitHub-style markdown editor for Laravel with Livewire and Alpine.js",
+            "keywords": [
+                "laravel",
+                "livewire",
+                "markdown"
+            ],
+            "support": {
+                "issues": "https://github.com/mckenziearts/livewire-markdown-editor/issues",
+                "source": "https://github.com/mckenziearts/livewire-markdown-editor/tree/v1.3"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.com/paypalme/monneyarthur",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/mckenziearts",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-04-24T07:57:41+00:00"
         },
         {
             "name": "monolog/monolog",

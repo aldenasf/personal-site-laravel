@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@github/markdown-toolbar-element':
+        specifier: ^2.2.3
+        version: 2.2.3
+      '@github/text-expander-element':
+        specifier: ^2.9.4
+        version: 2.9.4
       shiki:
         specifier: ^4.5.0
         version: 4.5.0
@@ -40,6 +46,15 @@ packages:
   '@alcalzone/ansi-tokenize@0.3.1':
     resolution: {integrity: sha512-cUD0PT0YX+rImRhfn7BfMRduP/tX/Zqt/N0dHlAyn2RlcJssCb5KsCJkhln61eh9vuJDkH8wKn3L8zJzzWXPFg==}
     engines: {node: '>=18'}
+
+  '@github/combobox-nav@2.3.1':
+    resolution: {integrity: sha512-gwxPzLw8XKecy1nP63i9lOBritS3bWmxl02UX6G0TwMQZbMem1BCS1tEZgYd3mkrkiDrUMWaX+DbFCuDFo3K+A==}
+
+  '@github/markdown-toolbar-element@2.2.3':
+    resolution: {integrity: sha512-AlquKGee+IWiAMYVB0xyHFZRMnu4n3X4HTvJHu79GiVJ1ojTukCWyxMlF5NMsecoLcBKsuBhx3QPv2vkE/zQ0A==}
+
+  '@github/text-expander-element@2.9.4':
+    resolution: {integrity: sha512-+zxSlek2r0NrbFmRfymVtYhES9YU033acc/mouXUkN2bs8DaYScPucvBhwg/5d0hsEb2rIykKnkA/2xxWSqCTw==}
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -391,6 +406,9 @@ packages:
 
   devlop@1.1.0:
     resolution: {integrity: sha512-RWmIqhcFf1lRYBvNmr7qTNuyCt/7/ns2jbpp1+PalgE/rDQcBT0fioSMUpJ93irlUhC5hrg4cYqe6U+0ImW0rA==}
+
+  dom-input-range@2.0.1:
+    resolution: {integrity: sha512-UMGnuQlEepIPCju5NrPe+8y52B+pRvSjIaSPW92KpukoDGSEVkI2iaCR4HxK7K6C7zmVsWE8PEjCYZaJMr3vpg==}
 
   emoji-regex@10.6.0:
     resolution: {integrity: sha512-toUI84YS5YmxW219erniWD0CIVOo46xGKColeNQRgOzDorgBi1v4D71/OFzgD9GO2UGKIv1C3Sp8DAn0+j5w7A==}
@@ -935,6 +953,15 @@ snapshots:
       is-fullwidth-code-point: 5.1.0
     optional: true
 
+  '@github/combobox-nav@2.3.1': {}
+
+  '@github/markdown-toolbar-element@2.2.3': {}
+
+  '@github/text-expander-element@2.9.4':
+    dependencies:
+      '@github/combobox-nav': 2.3.1
+      dom-input-range: 2.0.1
+
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
       '@jridgewell/sourcemap-codec': 1.6.0
@@ -1217,6 +1244,8 @@ snapshots:
   devlop@1.1.0:
     dependencies:
       dequal: 2.0.3
+
+  dom-input-range@2.0.1: {}
 
   emoji-regex@10.6.0: {}
 
