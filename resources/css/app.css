@@ -11,6 +11,8 @@ layer(base);
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 
+@import "../../vendor/mckenziearts/livewire-markdown-editor/resources/css/markdown-editor.css";
+    
 /* @theme {
     --font-sans:
         "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
